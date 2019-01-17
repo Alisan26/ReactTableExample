@@ -67,6 +67,8 @@ class EmployeeTable extends Component {
       openAddEmployee: false,
       openDellEmployee: false
     };
+  }
+  componentDidMount () {
     axios.get("http://127.0.0.1:5500/usermock.json").then(res => {
       this.setState({
         usermock: res.data.map((n, i) => {
@@ -83,7 +85,6 @@ class EmployeeTable extends Component {
       });
     });
   }
-
   handleRequestSort = (event, property) => {
     const orderBy = property;
     let order = "desc";
